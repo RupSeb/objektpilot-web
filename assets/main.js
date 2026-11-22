@@ -76,7 +76,7 @@ function frame(now) {
 requestAnimationFrame(frame);
 
 // 3D ist eine Zugabe: ohne WebGL bleibt die Seite vollständig lesbar.
-import('./scene.js')
+import('./scene.js?v=2')
   .then(m => {
     const created = m.createScene(document.getElementById('scene'), { reduced, coarse, viewportHeight: stableHeight });
     return created.ready.then(() => {
