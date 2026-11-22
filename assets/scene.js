@@ -1,4 +1,4 @@
-// Objektpilot in 3D: das echte Logo, die gelbe Kachel mit dem Haus.
+// Wohnnetto in 3D: das echte Logo, die gelbe Kachel mit dem Haus.
 // Beim Scrollen erzählt es den Weg einer Wohnung zur fertigen Anlage V:
 // Belege fliegen ungeordnet herum, wandern in die Kachel, das Haus hebt sich ab und
 // rechnet, ein Prüfring der Kanzlei schließt sich, am Ende steigt die Anlage V auf.
