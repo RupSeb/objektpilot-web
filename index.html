@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Objektpilot | Die Anlage V für Ihre Käufer, geprüft von einer Kanzlei</title>
+<meta name="description" content="Objektpilot begleitet die Käufer von Kapitalanlage-Wohnungen nach dem Notartermin bis zur geprüften Anlage V und zum Freibetrag. Für Vertriebe und Bauträger.">
+<meta name="theme-color" content="#0B0B0B">
+<meta property="og:title" content="Objektpilot für Kapitalanlage-Vertriebe">
+<meta property="og:description" content="Sie verkaufen die Steuerersparnis. Wir sorgen dafür, dass sie ankommt.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="assets/fonts/SchibstedGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css?v=1">
+<script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js"}}</script>
+</head>
+<body class="is-loading">
+<div class="loader" aria-hidden="true">
+  <svg viewBox="0 0 44 44"><rect width="44" height="44" rx="12"/><path pathLength="1" d="M11 23 L22 13 L33 23"/><path pathLength="1" d="M15 21 V31 H29 V21"/><path pathLength="1" d="M22 23.5 V29 M19.25 26.25 H24.75"/></svg>
+</div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="brand" href="./" aria-label="Objektpilot, zum Anfang">
+    <svg width="34" height="34" viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="12" fill="#FFD23F"/><path d="M11 23 L22 13 L33 23" fill="none" stroke="#111" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 21 V31 H29 V21" fill="none" stroke="#111" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 23.5 V29 M19.25 26.25 H24.75" stroke="#111" stroke-width="2.8" stroke-linecap="round"/></svg>
+    <span>Objektpilot</span><small>von Stratvell</small>
+  </a>
+  <nav>
+    <a class="nav-link" href="#ablauf">Ablauf</a>
+    <a class="nav-link" href="#ausprobieren">Ausprobieren</a>
+    <a class="pill pill-y" href="#kontakt">Gespräch vereinbaren</a>
+  </nav>
+</header>
+
+<div class="rail" aria-hidden="true"><span id="railLabel">Start</span><span class="rail-track"><i id="railBar"></i></span></div>
+
+<main>
+  <section class="s s-hero wrap" data-label="Start">
+    <p class="eyebrow reveal">Für Kapitalanlage-Vertriebe und Bauträger</p>
+    <h1 class="display">
+      <span class="ln"><span>Sie verkaufen die</span></span>
+      <span class="ln"><span>Steuerersparnis.</span></span>
+      <span class="ln"><span>Wir sorgen dafür,</span></span>
+      <span class="ln"><span>dass sie <span class="y">ankommt.</span></span></span>
+    </h1>
+    <p class="lead reveal">Objektpilot begleitet Ihre Käufer nach dem Notartermin bis zur fertigen Anlage V. Eine unabhängige Steuerkanzlei prüft sie, und der Käufer bekommt die Zahlen für seinen Freibetrag.</p>
+    <div class="cta-row reveal">
+      <a class="pill pill-y pill-lg" href="#kontakt">Gespräch vereinbaren</a>
+      <a class="pill pill-line pill-lg" href="#ausprobieren">Portal ansehen</a>
+    </div>
+    <p class="marken reveal"><span>Von einer Steuerkanzlei geprüft</span><span>Freie Wahl des Steuerberaters</span><span>Daten in Frankfurt am Main</span></p>
+    <div class="scroll-hint" aria-hidden="true">Scrollen<span></span></div>
+  </section>
+
+  <section class="s s-step" data-label="Nach dem Kauf">
+    <div class="sticky wrap"><div class="panel">
+      <p class="num reveal">Das Problem</p>
+      <h2 class="title reveal">Nach dem Notartermin wird es still. Bis der Käufer anruft.</h2>
+      <p class="body reveal">Ihre Beispielrechnung lebt vom Steuervorteil. Ob er beim Käufer ankommt, entscheidet sich in den Monaten nach dem Kauf, wenn Zinsbescheinigung, Hausgeld und Rechnungen im Schuhkarton landen.</p>
+      <p class="body muted reveal">Ohne Freibetrag finanziert der Käufer seinen Vorteil bis zum ersten Bescheid selbst vor. Geht die Rechnung dann nicht auf, klingelt bei Ihnen das Telefon.</p>
+      <div class="fakten reveal">
+        <div class="fakt"><b>255.600</b><span>Eigentumswohnungen wechselten 2024 den Besitzer <sup>1</sup></span></div>
+        <div class="fakt"><b>61%</b><span>der Kaufinteressenten besitzen schon eine Immobilie <sup>2</sup></span></div>
+        <div class="fakt"><b>18 Mon.</b><span>wartet ein Käufer ohne Freibetrag im Beispiel auf seine Ersparnis <sup>3</sup></span></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="s s-step right" id="ablauf" data-label="Unterlagen">
+    <div class="sticky wrap"><div class="panel">
+      <p class="num reveal">01 · So läuft es</p>
+      <h2 class="title reveal">Kaufunterlagen <span class="y">rein.</span></h2>
+      <p class="body reveal">Sie übergeben den Käufer mit Kaufvertrag, Kaufpreisaufteilung und Finanzierung, sobald er zustimmt. Er bekommt eine Einladung und findet seine Wohnung fertig angelegt.</p>
+      <p class="body muted reveal">Weitere Belege lädt er einfach hoch oder fotografiert sie. Die Texterkennung liest Kaufpreis, Zinsen, Hausgeld und Restnutzungsdauer aus, und er bestätigt jeden Wert.</p>
+    </div></div>
+  </section>
+
+  <section class="s s-step" data-label="Rechnen">
+    <div class="sticky wrap"><div class="panel">
+      <p class="num reveal">02</p>
+      <h2 class="title reveal">Die Software <span class="y">rechnet.</span></h2>
+      <p class="body reveal">Objektpilot ermittelt die Abschreibung mit dem richtigen Gebäudeanteil, verteilt die Kaufnebenkosten und rechnet die Rücklage aus dem Hausgeld heraus. Die Regeln stammen aus dem Gesetz und aus der Praxis einer Steuerkanzlei.</p>
+      <p class="body muted reveal">Mit den Werten aus der Lohnsteuerbescheinigung berechnet der Rechner die Ersparnis exakt, mit Solidaritätszuschlag und Kirchensteuer statt mit Circa-Werten.</p>
+    </div></div>
+  </section>
+
+  <section class="s s-step right" data-label="Prüfung">
+    <div class="sticky wrap"><div class="panel">
+      <p class="num reveal">03</p>
+      <h2 class="title reveal">Die Kanzlei <span class="y">prüft.</span></h2>
+      <p class="body reveal">Eine unabhängige Steuerkanzlei sieht jeden Fall durch, klärt Rückfragen direkt mit dem Käufer und gibt die Anlage V frei.</p>
+      <p class="body muted reveal">Der Käufer wählt die Kanzlei selbst und beauftragt sie direkt. Liegt ein Gutachten zur Restnutzungsdauer vor, prüft die Kanzlei es anhand einer festen Liste.</p>
+    </div></div>
+  </section>
+
+  <section class="s s-step" data-label="Ergebnis">
+    <div class="sticky wrap"><div class="panel">
+      <p class="num reveal">04</p>
+      <h2 class="title reveal">Anlage V und <span class="y">Freibetrag.</span></h2>
+      <p class="body reveal">Der Käufer bekommt seine geprüfte Anlage V als PDF und die Zahlen für den Freibetrag. Ab dem Jahr nach dem Kauf kommt die Ersparnis so jeden Monat mit dem Gehalt an und nicht erst nach dem Bescheid.</p>
+      <p class="body muted reveal">Im Folgejahr übernimmt Objektpilot Wohnung und Kauf. Der Käufer ergänzt nur Miete, Zinsen und Hausgeld, die Abschreibung läuft weiter.</p>
+    </div></div>
+  </section>
+
+  <section class="s s-nutzen" data-label="Ihr Nutzen">
+    <div class="sticky wrap">
+      <p class="num reveal">Ihr Nutzen</p>
+      <h2 class="title reveal">Zufriedene Käufer kaufen die zweite Wohnung.</h2>
+      <ul class="felder">
+        <li class="reveal"><b>Folgekäufe statt Funkstille</b><span>Wer erlebt, dass seine Rechnung aufgeht, kauft die nächste Wohnung wieder bei Ihnen.</span></li>
+        <li class="reveal"><b>Ein Argument mehr im Abschluss</b><span>Auf die Frage nach der Steuer antworten Sie mit einem Satz: Das ist bei uns begleitet.</span></li>
+        <li class="reveal"><b>Rechnen im Beratungsgespräch</b><span>Mit dem Rechner zeigen Sie schon vor dem Kauf, was mit dem echten Gehalt des Kunden netto übrig bleibt.</span></li>
+        <li class="reveal"><b>Weniger Anrufe nach dem Kauf</b><span>Fragen zu Belegen und zur Anlage V landen im Portal und bei der Kanzlei, nicht in Ihrem Vertrieb.</span></li>
+        <li class="reveal"><b>Überblick über Ihre Käufer</b><span>Sie sehen, wer eingerichtet ist und wer festhängt. Steuerdaten sehen Sie nicht, den Status nur mit Einwilligung.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="s s-step" data-label="Unabhängig">
+    <div class="sticky wrap"><div class="panel">
+      <p class="num reveal">Vertrauen</p>
+      <h2 class="title reveal">Unabhängig. Und genau deshalb glaubwürdig.</h2>
+      <div class="punkte">
+        <div class="punkt reveal"><i>1</i><div><b>Freie Wahl des Steuerberaters</b><span>Der Käufer entscheidet selbst, ob eine Partnerkanzlei prüft oder sein eigener Steuerberater. Beide arbeiten mit denselben sortierten Daten.</span></div></div>
+        <div class="punkt reveal"><i>2</i><div><b>Kein Geld zwischen Ihnen und der Kanzlei</b><span>Sie zahlen für Software. Der Käufer beauftragt und bezahlt die Kanzlei selbst.</span></div></div>
+        <div class="punkt reveal"><i>3</i><div><b>Daten in Frankfurt am Main</b><span>Datenbank und Dateien liegen in einem Rechenzentrum in Frankfurt. Steuerdaten sehen nur der Käufer und seine Kanzlei.</span></div></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="s s-probe wrap" id="ausprobieren" data-label="Ausprobieren">
+    <p class="num reveal">Selbst ansehen</p>
+    <h2 class="title reveal">Klicken Sie sich durch das Portal.</h2>
+    <p class="body reveal" style="max-width:620px">Die Vorschau zeigt jede Ansicht mit Beispieldaten. Sie brauchen keine Anmeldung, und gespeichert wird nichts.</p>
+    <div class="karten">
+      <a class="karte gelb reveal" href="https://app.stratvell.net/?demo=vertrieb#/" target="_blank" rel="noopener"><span class="k-num">Ansicht 1</span><b>Als Vertrieb</b><span>Käufer übergeben, den Stand verfolgen und mit dem Rechner eine Wohnung durchrechnen.</span><em>Vorschau öffnen →</em></a>
+      <a class="karte reveal" href="https://app.stratvell.net/?demo=kaeufer#/" target="_blank" rel="noopener"><span class="k-num">Ansicht 2</span><b>Als Käufer</b><span>Die Wohnung eintragen, Unterlagen hochladen und sehen, wie viel jeden Monat netto mehr bleibt.</span><em>Vorschau öffnen →</em></a>
+      <a class="karte reveal" href="https://app.stratvell.net/?demo=kanzlei#/" target="_blank" rel="noopener"><span class="k-num">Ansicht 3</span><b>Als Kanzlei</b><span>Fälle prüfen, Rückfragen stellen und die Anlage V freigeben.</span><em>Vorschau öffnen →</em></a>
+    </div>
+    <p class="hinweis reveal">Die Vorschau öffnet sich in einem neuen Fenster.</p>
+  </section>
+
+  <section class="s s-kontakt wrap center" id="kontakt" data-label="Kontakt" data-rail="off">
+    <p class="eyebrow reveal">Pilotprogramm für das Steuerjahr 2026</p>
+    <h2 class="kontakt-title reveal">Rechnen wir eine Ihrer Wohnungen gemeinsam durch.</h2>
+    <p class="lead reveal" style="margin-left:auto;margin-right:auto">In 30 Minuten zeigen wir Ihnen an einem Objekt aus Ihrem Bestand, was Ihre Käufer gewinnen und wie das Portal in Ihren Ablauf passt.</p>
+    <div class="cta-row center reveal">
+      <a class="pill pill-y pill-lg" href="mailto:s.ruppert@stratvell.net?subject=Objektpilot%20Pilotprogramm">Gespräch vereinbaren</a>
+      <a class="pill pill-line pill-lg" href="#ausprobieren">Portal ansehen</a>
+    </div>
+    <div class="reveal"><div class="person"><i>SR</i><div><b>Sebastian Ruppert</b><span>Ansprechpartner Pilotprogramm, s.ruppert@stratvell.net</span></div></div></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-head">Objektpilot</p>
+        <p>Objektpilot ist eine Software von Stratvell, einer Marke der Canis Lupus Sebru Ltd., Dublin. Die steuerliche Prüfung erbringt die vom Käufer gewählte Kanzlei eigenverantwortlich und im eigenen Namen.</p>
+        <p>Beispielrechnungen sind vereinfacht und ersetzen keine Steuerberatung.</p>
+      </div>
+      <div>
+        <p class="foot-head">Rechtliches</p>
+        <p><a href="https://app.stratvell.net/impressum.html">Impressum</a></p>
+        <p><a href="datenschutz.html">Datenschutz</a></p>
+        <p><a href="https://app.stratvell.net/">Anmelden</a></p>
+      </div>
+      <div>
+        <p class="foot-head">Quellen</p>
+        <ol>
+          <li>Immobilienmarktbericht Deutschland 2025, Arbeitskreis der Oberen Gutachterausschüsse</li>
+          <li>BPD und Simon-Kucher, Interessentenbefragung 2024</li>
+          <li>Eigene Beispielrechnung, Kauf zu Jahresbeginn, Erstattung nach dem Bescheid im Folgejahr, Freibetrag nach § 39a EStG</li>
+        </ol>
+      </div>
+    </div>
+    <p class="copy">© 2026 Canis Lupus Sebru Ltd. · Stratvell</p>
+  </div>
+</footer>
+
+<script src="assets/vendor/lenis.min.js"></script>
+<script type="module" src="assets/main.js?v=1"></script>
+<noscript><style>.reveal,.ln>span{opacity:1!important;transform:none!important}.loader{display:none}</style></noscript>
+</body>
+</html>
