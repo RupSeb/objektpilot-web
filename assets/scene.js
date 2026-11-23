@@ -15,7 +15,7 @@ const GELB = 0xffd23f, TINTE = 0x111111;
 // bars: Rechenbalken, seal: Prüfring, sheet: Anlage V, rings: drei Bahnen, glow: Leuchten
 const ST = {
   x:      [ 2.55, 2.5, 2.45, -2.5, 2.5, -2.5, 2.45, 2.75, 2.55, 3.4, 0.0 ],
-  y:      [ 0.05, 0.0, 0.0, 0.0, 0.0, 0.0, -0.2, 0.1, 0.0, 1.55, 2.2 ],
+  y:      [ 0.05, 0.0, 0.0, 0.0, 0.0, 0.0, -0.2, 0.1, 0.0, 1.55, 5.2 ],
   s:      [ 1.0, 0.95, 0.95, 0.95, 0.95, 0.95, 0.9, 0.75, 0.85, 0.55, 0.5 ],
   ry:     [ -0.42, -0.5, -0.62, 0.55, -0.35, 0.42, -0.3, -0.75, -0.5, -0.3, 0.0 ],
   rx:     [ 0.12, 0.15, 0.25, 0.1, 0.05, 0.08, 0.06, 0.2, 0.1, 0.1, 0.05 ],
@@ -224,7 +224,7 @@ export function createScene(canvas, opts) {
     let x = Math.sign(xt) * Math.min(Math.abs(xt) * breite, mitteFrei), y = at('y', story);
     let s = at('s', story) * clamp(frei / 4.6, 0.55, 1);
     if (Math.abs(xt) < 0.01) x = 0;
-    if (mobil) { x = 0; y = 1.55 + (story > LAST - 0.5 ? 0.35 : 0); s = at('s', story) * 0.68; }
+    if (mobil) { x = 0; y = lerp(1.55, ST.y[LAST], clamp(story - (LAST - 1), 0, 1)); s = at('s', story) * 0.68; }
     rig.position.set(x, y + over * 6.3 + Math.sin(t * 0.8) * 0.05, 0);
     rig.scale.setScalar(s);
     logo.rotation.set(at('rx', story) + zeiger.y * 0.25 + Math.sin(t * 0.5) * 0.03, at('ry', story) + zeiger.x * 0.45 + Math.sin(t * 0.35) * 0.1, 0);
